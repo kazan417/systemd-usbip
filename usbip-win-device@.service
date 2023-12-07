@@ -1,0 +1,16 @@
+[Unit]
+Description=win USB/IP Device %I
+Requires=usbipd.service
+After=usbipd.service
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+ExecStartPre=/bin/sleep 3
+EnvironmentFile=/etc/usbip-devices/%i.conf
+RemainAfterExit=yes
+ExecStart=/usr/sbin/conf-win-usbip-device %i
+ExecStop=/usr/sbin/conf-win-usbip-device %i
+
+[Install]
+WantedBy=multi-user.target
