@@ -4,11 +4,13 @@ unitdir=$(sysconfdir)/systemd/system
 
 UNITS = \
 	usbipd.service \
-	usbip-device@.service
+	usbip-device@.service \
+	usbip-win-device@.service
 
 SCRIPTS = \
 	configure-usbip-device.sh \
-	remove-usbip-device.sh
+	remove-usbip-device.sh \
+	conf-win-usbip-device.sh
 
 all:
 
