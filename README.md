@@ -26,11 +26,14 @@ called /etc/usbip_devices/mouse.conf
 To enable the device at boot, run:
 
     systemctl enable usbip-device@mouse
+    systemctl enable usbip-win-device@mouse
 
 To share the device immediately:
 
     systemctl start usbip-device@mouse
+    systemctl start usbip-win-device@mouse
 
 To stop sharing it:
 
+    systemctl stop usbip-win-device@mouse
     systemctl stop usbip-device@mouse
